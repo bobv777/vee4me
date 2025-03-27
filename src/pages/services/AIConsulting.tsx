@@ -4,8 +4,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { sections } from '../../constants/sections';
 import { Brain, CheckCircle, ArrowRight } from 'lucide-react';
-import { CTAButton } from '../../components/ui/CTAButton';
-
+import CTAButton from '../../components/ui/CTAButton';
 const AIConsultingPage: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { sections } from '../constants/sections';
 import { Brain, Award, BookOpen, Users, Briefcase, GraduationCap, ArrowRight } from 'lucide-react';
-import { CTAButton } from '../components/ui/CTAButton';
+import CTAButton from '../components/ui/CTAButton';
 
 const AboutConsultant: React.FC = () => {
   const scrollToSection = (sectionId: string) => {

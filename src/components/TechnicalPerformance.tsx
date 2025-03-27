@@ -38,7 +38,7 @@ import {
 } from 'lucide-react';
 import { BackgroundParticles } from './BackgroundParticles';
 import { SectionHeader } from './ui/SectionHeader';
-import { CTAButton } from './ui/CTAButton';
+import CTAButton from './ui/CTAButton';
 
 const performanceMetrics = [
   {

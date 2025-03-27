@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing';
+import { Vector2 } from 'three';
 import { Sparkles, ArrowRight, Rocket, Calendar } from 'lucide-react';
 import { NeuralNetwork } from './three/NeuralNetwork';
 import { HolographicInterface } from './three/HolographicInterface';
@@ -10,7 +11,6 @@ import { AIAvatar } from './three/AIAvatar';
 import { BookDemoModal } from './ui/BookDemoModal';
 import { ContactModal } from './ui/ContactModal';
 import { sections } from '../constants/sections';
-
 interface HeroProps {
   onGetStarted: () => void;
   onBookDemo: () => void;
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted, onBookDemo }) => {
                   luminanceThreshold={0.7}
                   luminanceSmoothing={0.9}
                 />
-                <ChromaticAberration offset={[0.002, 0.002]} />
+               <ChromaticAberration offset={{ x: 0.002, y: 0.002 }} />
               </EffectComposer>
             </Suspense>
           </Canvas>

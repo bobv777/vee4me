@@ -4,7 +4,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { sections } from '../../constants/sections';
 import { Cpu, CheckCircle, ArrowRight } from 'lucide-react';
-import { CTAButton } from '../../components/ui/CTAButton';
+import CTAButton from '../../components/ui/CTAButton';
 
 const CustomAISolutionsPage: React.FC = () => {
   const scrollToSection = (sectionId: string) => {

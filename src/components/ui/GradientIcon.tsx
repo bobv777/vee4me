@@ -1,8 +1,8 @@
 import React from 'react';
-import { DivideIcon as LucideIcon } from 'lucide-react';
+import { DivideIcon } from 'lucide-react';
 
 interface GradientIconProps {
-  icon: LucideIcon;
+  icon: React.ElementType; // ✅ FIXED: Correct type for LucideIcon components
   gradient: string;
   size?: 'sm' | 'md' | 'lg';
   className?: string;

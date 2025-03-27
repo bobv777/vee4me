@@ -1,21 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  BrainCircuit, 
-  Share2, 
-  Image as ImageIcon, 
-  Layout,
-  ArrowRight,
-  CheckCircle,
   BarChart,
+  Share2,
   Users,
-  MessageSquare,
   Globe,
-  Award
+  Award,
+  CheckCircle
 } from 'lucide-react';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
-import { CTAButton } from '../../components/ui/CTAButton';
+import CTAButton from '../../components/ui/CTAButton';
 
 const benefits = [
   {
@@ -74,8 +69,7 @@ const AIMarketingAutomation: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header onNavigate={scrollToSection} />
-      
-      {/* Hero Section */}
+
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-black to-black" />
         <div className="container mx-auto px-4 relative z-10">
@@ -95,10 +89,10 @@ const AIMarketingAutomation: React.FC = () => {
                 <CTAButton onClick={() => scrollToSection('contact')}>
                   Get Started Today
                 </CTAButton>
-                <CTAButton 
-                  variant="secondary"
-                  onClick={() => scrollToSection('case-studies')}
-                >
+                <CTAButton onClick={() => { /* your click handler code here */ }}>
+                  Click Here
+                </CTAButton>
+                <CTAButton>
                   View Case Studies
                 </CTAButton>
               </div>
@@ -107,7 +101,6 @@ const AIMarketingAutomation: React.FC = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <motion.div
@@ -131,7 +124,6 @@ const AIMarketingAutomation: React.FC = () => {
                 className="relative group"
                 whileHover={{ y: -5 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative p-6 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors h-full">
                   <benefit.icon className="w-8 h-8 text-purple-400 mb-4" />
                   <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
@@ -139,85 +131,6 @@ const AIMarketingAutomation: React.FC = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
-            <p className="text-gray-300">Real results from real clients</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={study.client}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-8 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 transition-colors">
-                  <Award className="w-8 h-8 text-purple-400 mb-4" />
-                  <h3 className="text-2xl font-semibold mb-4">{study.client}</h3>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-400 mb-2">Challenge</h4>
-                      <p className="text-gray-300">{study.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-400 mb-2">Solution</h4>
-                      <p className="text-gray-300">{study.solution}</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-400 mb-3">Results</h4>
-                    <ul className="space-y-2">
-                      {study.results.map((result, i) => (
-                        <li key={i} className="flex items-center text-gray-300">
-                          <CheckCircle className="w-5 h-5 text-purple-400 mr-2" />
-                          {result}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-8 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-white/10"
-            >
-              <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Marketing?</h2>
-              <p className="text-gray-300 mb-8">
-                Get started with AI-powered marketing automation today and experience the difference.
-              </p>
-              <CTAButton onClick={() => scrollToSection('contact')}>
-                Schedule a Demo
-              </CTAButton>
-            </motion.div>
           </div>
         </div>
       </section>
